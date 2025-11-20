@@ -1,84 +1,129 @@
-# Task 5 – Wireshark Packet Capture & Analysis
+Wireshark Packet Capture & Analysis (Task 5)
+🎯 Objective
 
-## 🎯 Objective
-Capture live network packets using Wireshark and analyze basic network protocols such as TCP, UDP, DNS, and HTTP.
+Capture live network traffic using Wireshark, analyze different protocols, apply filters, and identify key packet details. Export the captured data as a .pcap file and summarize protocol behavior.
 
----
+🛠 Tools Used
 
-## 🛠 Tools Used
-- Wireshark (Latest Version)
-- Windows 10/11 Laptop
-- Command Prompt (for ping testing)
+Wireshark (latest version)
 
----
+Windows/Linux/macOS system
 
-## 📌 Steps Performed
+Web browser (for generating traffic)
 
-### 1. Installed Wireshark
-Downloaded from the official website and installed with Npcap support.
+Command Prompt / Terminal (for ping tests)
 
-### 2. Started Packet Capture
-Selected the active Wi-Fi adapter and began capturing live packets.
+📌 Steps Performed
+1. Installed Wireshark
 
-### 3. Generated Network Traffic
-- Browsed Google and YouTube
-- Used command: `ping google.com`
+Downloaded and installed Wireshark with Npcap support for live packet capturing.
 
-### 4. Applied Filters
-Used:
-- `dns`
-- `tcp`
-- `http`
-- `udp`
+2. Started Packet Capture
 
-### 5. Identified Protocols
-Found:
-- **TCP** – Reliable transport
-- **UDP** – Fast, connectionless transport
-- **DNS** – Domain name resolution
-- **HTTP/HTTPS** – Web browsing traffic
-- **ICMP** – Ping echo requests
+Launched Wireshark
 
-### 6. Exported Capture
-Saved as: `traffic_capture.pcap`
+Selected active network interface (Wi-Fi/Ethernet)
 
----
+Started live capture
 
-## 📊 Findings Summary
+3. Generated Traffic
 
-### ✔ TCP Traffic
-- Three-way handshake observed.
-- Multiple acknowledgment packets.
+Performed actions to generate packets:
 
-### ✔ UDP Traffic
-- Faster, no handshake.
-- Used by DNS queries.
+Browsed websites (Google, YouTube, etc.)
 
-### ✔ DNS Packets
-- Queried domains like google.com
-- Request/response structure visible.
+Ran command:
 
-### ✔ HTTP/HTTPS Traffic
-- Encrypted TLS packets for HTTPS.
+ping google.com
+4. Applied Filters
 
----
+Used various protocol filters to isolate packets.
 
-## 📁 Repository Structure
+5. Analyzed Packets
 
-Cybersecurity-Task-5-Wireshark-Packet-Capture/n
-│/n
-├── README.md/n
-│/n
-├── traffic_capture.pcap/n
-│/n
-├── screenshots//n
-│   ├── 01_wireshark_home.png/n
-│   ├── 02_capture_running.png/n
-│   ├── 03_dns_filter.png/n
-│   ├── 04_tcp_details.png/n
-│   ├── 05_protocol_hierarchy.png/n
-│   ├── 06_pcap_saved.png/n
-│/n
-└── docs//n
-    ├── task_instructions.pdf/n
-    └── analysis_notes.txt/n
+Inspected individual packet layers including Ethernet, IP, TCP/UDP, DNS, and HTTP.
+
+6. Exported Capture
+
+Saved the captured packets as:
+
+traffic_capture.pcap
+🔍 Filters Used
+Purpose	Filter
+Show DNS packets	dns
+Show TCP packets	tcp
+Show UDP packets	udp
+Show ICMP packets	icmp
+Show HTTP packets	http
+📊 Protocol Analysis
+1. TCP (Transmission Control Protocol)
+
+Connection-oriented
+
+Three-way handshake observed
+
+Reliable delivery with ACK packets
+
+2. UDP (User Datagram Protocol)
+
+Connectionless and faster
+
+No handshake or retransmission
+
+Used for DNS queries
+
+3. DNS (Domain Name System)
+
+Resolves domain names into IP addresses
+
+Observed standard DNS query and response packets
+
+4. HTTP/HTTPS Traffic
+
+HTTP shows readable headers (if not encrypted)
+
+HTTPS appears as TLS-encrypted packets
+
+5. ICMP
+
+Used during ping tests
+
+Echo request and echo reply packets visible
+
+🧪 Findings Summary
+
+Multiple protocols detected including TCP, UDP, DNS, ICMP, and HTTP/HTTPS.
+
+DNS packets showed domain lookups (e.g., google.com).
+
+TCP packets indicated reliable communication with ACKs and SYN/ACK handshake.
+
+HTTPS traffic appeared encrypted through TLS.
+
+Ping tests generated clear ICMP traffic.
+
+📁 Screenshots Included
+
+Screenshots folder contains:
+
+01_wireshark_home.png – Wireshark home interface
+
+02_capture_running.png – Live capture in progress
+
+03_dns_filter.png – DNS filter applied
+
+04_tcp_details.png – TCP packet expanded
+
+05_protocol_hierarchy.png – Protocol hierarchy window
+
+06_pcap_saved.png – Export .pcap file confirmation
+
+✅ Task Output
+
+Completed packet capture
+
+.pcap file exported
+
+Protocol analysis documented
+
+Screenshots captured
