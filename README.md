@@ -65,3 +65,20 @@ Saved as: `traffic_capture.pcap`
 
 ## 📁 Repository Structure
 
+Cybersecurity-Task-5-Wireshark-Packet-Capture/
+│
+├── README.md
+│
+├── traffic_capture.pcap
+│
+├── screenshots/
+│   ├── 01_wireshark_home.png
+│   ├── 02_capture_running.png
+│   ├── 03_dns_filter.png
+│   ├── 04_tcp_details.png
+│   ├── 05_protocol_hierarchy.png
+│   ├── 06_pcap_saved.png
+│
+└── docs/
+    ├── task_instructions.pdf
+    └── analysis_notes.txt
