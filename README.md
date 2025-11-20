@@ -1,129 +1,142 @@
-Wireshark Packet Capture & Analysis (Task 5)
-🎯 Objective
+# 🔐 Wireshark Packet Capture & Analysis — Professional Report
 
-Capture live network traffic using Wireshark, analyze different protocols, apply filters, and identify key packet details. Export the captured data as a .pcap file and summarize protocol behavior.
+## 🎯 Objective
 
-🛠 Tools Used
+Perform a structured network analysis using Wireshark by capturing real-time packets, applying protocol filters, identifying traffic types, and exporting data for documentation and troubleshooting purposes.
 
-Wireshark (latest version)
+---
 
-Windows/Linux/macOS system
+## 🛠 Tools Used
 
-Web browser (for generating traffic)
+* **Wireshark (Latest Version)** — Packet analysis tool
+* **Npcap** — Required for packet capturing on Windows
+* **Web Browser** — For generating HTTP/HTTPS traffic
+* **Terminal / Command Prompt** — For ICMP tests (`ping`)
 
-Command Prompt / Terminal (for ping tests)
+---
 
-📌 Steps Performed
-1. Installed Wireshark
+## 📌 Step-by-Step Procedure
 
-Downloaded and installed Wireshark with Npcap support for live packet capturing.
+### **1️⃣ Installing Wireshark**
 
-2. Started Packet Capture
+* Downloaded from the official website
+* Installed with default settings
+* Enabled Npcap during installation
 
-Launched Wireshark
+### **2️⃣ Starting Live Capture**
 
-Selected active network interface (Wi-Fi/Ethernet)
+* Selected the active network adapter (Wi-Fi/Ethernet)
+* Clicked **Start Capturing Packets**
 
-Started live capture
+### **3️⃣ Generating Network Traffic**
 
-3. Generated Traffic
+Performed multiple actions to create varied packet flows:
 
-Performed actions to generate packets:
+* Visited common websites (Google, YouTube)
+* Ran ICMP test:
 
-Browsed websites (Google, YouTube, etc.)
+  ```bash
+  ping google.com
+  ```
 
-Ran command:
+### **4️⃣ Applying Protocol Filters**
 
-ping google.com
-4. Applied Filters
+Used Wireshark display filters to isolate specific packet types.
 
-Used various protocol filters to isolate packets.
+### **5️⃣ Analyzing Packets**
 
-5. Analyzed Packets
+Viewed detailed breakdowns of multi-layered packet structures:
 
-Inspected individual packet layers including Ethernet, IP, TCP/UDP, DNS, and HTTP.
+* Ethernet Frame
+* IP Header
+* TCP/UDP Layer
+* Application Layer (DNS/HTTP)
 
-6. Exported Capture
+### **6️⃣ Exporting Packet Capture**
 
-Saved the captured packets as:
+Saved the captured traffic as:
 
+```
 traffic_capture.pcap
-🔍 Filters Used
-Purpose	Filter
-Show DNS packets	dns
-Show TCP packets	tcp
-Show UDP packets	udp
-Show ICMP packets	icmp
-Show HTTP packets	http
-📊 Protocol Analysis
-1. TCP (Transmission Control Protocol)
+```
 
-Connection-oriented
+---
 
-Three-way handshake observed
+## 🔍 Filters Used
 
-Reliable delivery with ACK packets
+| Filter | Purpose                             |
+| ------ | ----------------------------------- |
+| `dns`  | View DNS query/response traffic     |
+| `http` | Display HTTP web requests/responses |
+| `tcp`  | Show TCP connection packets         |
+| `udp`  | Show UDP datagrams                  |
+| `icmp` | Show ping (echo) traffic            |
 
-2. UDP (User Datagram Protocol)
+---
 
-Connectionless and faster
+## 📊 Protocol Analysis Summary
 
-No handshake or retransmission
+### **🔸 TCP – Reliable Transport Layer Protocol**
 
-Used for DNS queries
+* Observed SYN, SYN/ACK, ACK handshake
+* Sequence and ACK numbers visible
+* Provides ordered and reliable delivery
 
-3. DNS (Domain Name System)
+### **🔸 UDP – Fast, Connectionless Protocol**
 
-Resolves domain names into IP addresses
+* No handshake or retransmission
+* Lightweight and ideal for DNS
 
-Observed standard DNS query and response packets
+### **🔸 DNS – Domain Resolution Protocol**
 
-4. HTTP/HTTPS Traffic
+* Detected queries to resolve domains like `google.com`
+* Shows Query → Response pattern
 
-HTTP shows readable headers (if not encrypted)
+### **🔸 HTTP/HTTPS – Web Traffic Protocols**
 
-HTTPS appears as TLS-encrypted packets
+* HTTP packets show readable headers
+* HTTPS appears encrypted via TLS
 
-5. ICMP
+### **🔸 ICMP – Internet Control Message Protocol**
 
-Used during ping tests
+* Generated using `ping`
+* Clear Echo Request and Echo Reply packets
 
-Echo request and echo reply packets visible
+---
 
-🧪 Findings Summary
+## 🧪 Key Findings
 
-Multiple protocols detected including TCP, UDP, DNS, ICMP, and HTTP/HTTPS.
+* Multiple core protocols were clearly identified: **TCP, UDP, DNS, ICMP, HTTP/HTTPS**.
+* DNS queries revealed domain lookups and corresponding IP addresses.
+* TCP streams displayed full handshake and acknowledgment patterns.
+* HTTPS traffic confirmed encrypted sessions.
+* ICMP packets validated host connectivity.
 
-DNS packets showed domain lookups (e.g., google.com).
+---
 
-TCP packets indicated reliable communication with ACKs and SYN/ACK handshake.
+## 🖼 Screenshots Included
 
-HTTPS traffic appeared encrypted through TLS.
+All screenshots are stored inside the **`/screenshots`** directory:
 
-Ping tests generated clear ICMP traffic.
+* `01_wireshark_home.png` — Wireshark welcome screen
+* `02_capture_running.png` — Live traffic capture
+* `03_dns_filter.png` — DNS filter in action
+* `04_tcp_details.png` — Expanded TCP packet analysis
+* `05_protocol_hierarchy.png` — Protocol hierarchy breakdown
+* `06_pcap_saved.png` — Export confirmation for `.pcap`
 
-📁 Screenshots Included
+---
 
-Screenshots folder contains:
+## 📁 Repository Output Summary
 
-01_wireshark_home.png – Wireshark home interface
+This repository contains:
 
-02_capture_running.png – Live capture in progress
+* **traffic_capture.pcap** — Actual packet capture file
+* **screenshots/** — Evidence of packet analysis
+* **docs/** — Task instructions & notes
+* **README.md** — Comprehensive report
 
-03_dns_filter.png – DNS filter applied
+---
 
-04_tcp_details.png – TCP packet expanded
 
-05_protocol_hierarchy.png – Protocol hierarchy window
 
-06_pcap_saved.png – Export .pcap file confirmation
-
-✅ Task Output
-
-Completed packet capture
-
-.pcap file exported
-
-Protocol analysis documented
-
-Screenshots captured
